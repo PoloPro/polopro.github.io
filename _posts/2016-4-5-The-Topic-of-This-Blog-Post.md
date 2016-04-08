@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Twitter Ruby Gem
+title: The Topic of This Blog Post
 subtitle: Subtitle Goes Here
 ---
 
