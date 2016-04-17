@@ -15,25 +15,23 @@ title: Tests are for Day Two
 </ul>
 
 
-<h3>Day One</h3>
+<h2>Day One</h2>
 
 Every programmer knows the feeling of Day One. You may be waiting in line for coffee, or folding laundry, or meeting a friend for dinner. You're thinking about some project from work, maybe just complaining to yourself about an inconvenience. Suddenly, inspiration. A real eureka moment--a lightning bolt of clarity. 
 
 Immediately you pull out your phone and begin writing furiously. Idea after idea flying onto your default notes app, mispellings left as tomorrow's problem. You need to write this down <em>now</em>. Your coffee, wrinkled laundry, or unfortunate friend is long forgotten. When you finally reach your computer, the rest of the day slides into a blur. One hand is diagramming while the other pours out beautiful, natural code. It's easier than speaking. As you stumble into bed, hours later, you're perfectly content with the world. 
 
-That's Day One. 
-
-Tests are for Day Two. 
+That's Day One. Tests are for Day Two. 
 
 You shuffle into work and look at what you wrote the day before. It's sloppy, rambling stuff that ends in the middle of a line. Your diagrams are unreadable scribbles, your notes autocorrected to gibberish. Picking up the pieces of your frenzied coding and laying out a plan forward--that's Day Two. 
 
-<h3>RSpec</h3>
+<h2>RSpec</h2>
 
 RSpec is, at its core, a testing library for Ruby. It's a Day Two tool. It's doubtless the most popular in use today, providing a rough approximation of natural language for test-writing.
 
 To walk you through RSpec and test-driven development in general, I'll use a project I recently Day One'd: a reimplementation of NYC's subway countdown clocks using the MTA real-time API. 
 
-<h4>Getting Started</h4>
+<h3>Getting Started</h3>
 To start writing tests for your project, you'll first need to install the RSpec gem in your working directory.
 
 {% highlight ruby %}
@@ -57,8 +55,9 @@ spec/
     mta_api_spec.rb
 {% endhighlight %}
 
-<h4>The Basic Layout of RSpec</h4>
+<h3>The Basic Layout of RSpec</h3>
 
+<h4>Describe</h4>
 An RSpec spec (aha) can basically be broken down into a series of <strong>describe</strong> blocks. These blocks model the structure of your program, usually matching your classes and methods. From my <em>mta_api_spec</em>:
 
 {% highlight ruby %}
@@ -66,6 +65,7 @@ describe 'MTA Countdown Clock'
     describe 'API Interface'
         describe '#load_realtime_data'
         describe '#load_station_data'
+        describe '#create_schedule'
     describe 'Schedule'
         describe '.create'
         describe '#next_n_arrivals' 
@@ -92,14 +92,32 @@ Note the naming convention: instead of <em>'the schedule is created properly'</e
 
 Also important to note is the prefix. A <strong>period</strong> indicates the method is a <strong>class method</strong>, while a <strong>octothorpe (#)</strong> indicates the method is an <strong>instance method</strong>.
 
+<h4>The Tests</h4>
+
+Describe blocks organize and provide context for your tests, but they don't test any functionality themselves. For that you need to use <strong>it</strong> blocks.
+
+{% highlight ruby %}
+describe 'API Interface' do
+    describe '#load_realtime_data' do
+      it 'loads gtfs data from the server without error' do
+      end
+
+      it 'returns an array of hashes' do
+      end
+    end
+end
+{% endhighlight %}
+
+
+
 <ul>
-  <li>What is RSpec?</li>
-  <li>Getting started, rspec --init</li>
-  <ol>Basic layout of Rspec
-    <li>Describe</li>
+  <!-- <li>What is RSpec?</li> -->
+  <!-- <li>Getting started, rspec --init</li> -->
+  <!-- <ol>Basic layout of Rspec -->
+    <!-- <li>Describe</li> -->
     <li>It/do, It/not_do</li>
     <li>Expect (note spacing)</li>
-    <li>Nesting describe blocks</li>
+    <!-- <li>Nesting describe blocks</li> -->
   </ol>
   <ol>More advanced Rspec
     <li>Class v instance methods, naming</li>
