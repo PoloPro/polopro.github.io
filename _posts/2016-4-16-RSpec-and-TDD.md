@@ -19,15 +19,17 @@ title: Tests are for Day Two
 
 Every programmer knows the feeling of Day One. You may be waiting in line for coffee, or folding laundry, or meeting a friend for dinner. You're thinking about some project from work, maybe just complaining to yourself about an inconvenience. Suddenly, inspiration. A real eureka moment--a lightning bolt of clarity. 
 
-Immediately you pull out your phone and begin writing furiously. Idea after idea flying onto your default notes app, mispellings left as tomorrow's problem. You need to write this down <em>now</em>. Your coffee, wrinkled laundry, or unfortunate friend is long forgotten. When you finally reach your computer, the rest of the day slides into a blur. One hand is diagramming while the other pours out beautiful, natural code. It's easier than speaking. When you finally stumble into bed, hours later, you're perfectly content with the world. 
+Immediately you pull out your phone and begin writing furiously. Idea after idea flying onto your default notes app, mispellings left as tomorrow's problem. You need to write this down <em>now</em>. Your coffee, wrinkled laundry, or unfortunate friend is long forgotten. When you finally reach your computer, the rest of the day slides into a blur. One hand is diagramming while the other pours out beautiful, natural code. It's easier than speaking. As you stumble into bed, hours later, you're perfectly content with the world. 
 
-That's Day One. Tests are for Day Two. 
+That's Day One. 
+
+Tests are for Day Two. 
 
 You shuffle into work and look at what you wrote the day before. It's sloppy, rambling stuff that ends in the middle of a line. Your diagrams are unreadable scribbles, your notes autocorrected to gibberish. Picking up the pieces of your frenzied coding and laying out a plan forward--that's Day Two. 
 
 <h3>RSpec</h3>
 
-RSpec is, at its core, a testing library for Ruby. It's doubtless the most popular in use today, providing a rough approximation of natural language for test-writing.
+RSpec is, at its core, a testing library for Ruby. It's a Day Two tool. It's doubtless the most popular in use today, providing a rough approximation of natural language for test-writing.
 
 To walk you through RSpec and test-driven development in general, I'll use a project I recently Day One'd: a reimplementation of NYC's subway countdown clocks using the MTA real-time API. 
 
@@ -57,6 +59,38 @@ spec/
 
 <h4>The Basic Layout of RSpec</h4>
 
+An RSpec spec (aha) can basically be broken down into a series of <strong>describe</strong> blocks. These blocks model the structure of your program, usually matching your classes and methods. From my <em>mta_api_spec</em>:
+
+{% highlight ruby %}
+describe 'MTA Countdown Clock'
+    describe 'API Interface'
+        describe '#load_realtime_data'
+        describe '#load_station_data'
+    describe 'Schedule'
+        describe '.create'
+        describe '#next_n_arrivals' 
+    describe 'Trip'
+        describe '.create'
+        describe '#passes_station?' 
+    describe 'Stop'
+{% endhighlight %}
+
+ I've omitted some formatting to show the layout more clearly. 
+
+ The first block, <em>MTA Countdown Clock</em>, is the project I'm testing. As your projects get more complicated and you develop more and more tests, you may want to break your testing into multiple spec files. For this relatively straightforward application, I'll limit my tests to a single file. 
+
+ The second layer of describe blocks contain my classes. Although these classes are all interdependent in the final application, we want to isolate them for testing. An error in one test shouldn't carry over into any other test (this is called cascading failure).
+
+ The third layer of describe blocks contain my methods.
+
+{% highlight ruby %}
+describe '.create'
+describe '#next_n_arrivals'
+{% endhighlight %}
+
+Note the naming convention: instead of <em>'the schedule is created properly'</em>, I simply use <em>'.create'</em>. More descriptive test conditions will come in the <strong>it</strong> statements later. 
+
+Also important to note is the prefix. A <strong>period</strong> indicates the method is a <strong>class method</strong>, while a <strong>octothorpe (#)</strong> indicates the method is an <strong>instance method</strong>.
 
 <ul>
   <li>What is RSpec?</li>
