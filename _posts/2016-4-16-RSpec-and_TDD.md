@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RSpec and Test-Driven Development
-subtitle: MTA Subway Countdown Clock
+title: MTA Subway Countdown Clock
+subtitle: RSpec and Test-Driven Development
 ---
 
 <ul>
