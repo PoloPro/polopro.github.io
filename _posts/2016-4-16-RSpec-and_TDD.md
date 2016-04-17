@@ -1,7 +1,7 @@
 ---
 layout: post
-title: MTA Subway Countdown Clock
-subtitle: RSpec and Test-Driven Development
+title: RSpec and Test-Driven Development
+subtitle: MTA Subway Countdown Clock
 ---
 
 <ul>
@@ -38,14 +38,12 @@ http://goo.gl/zS7ti
 
 {% highlight ruby %}
 def show
-@widget = Widget(params[:id])
-respond_to do |format|
-format.html # show.html.erb
-format.json { render json: @widget }
-end
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
 end
 {% endhighlight %}
-
-More to come.
 
 
