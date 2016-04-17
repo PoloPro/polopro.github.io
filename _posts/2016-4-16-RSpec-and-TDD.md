@@ -33,9 +33,19 @@ Once you have the gem, you'll need a spec file and a spec helper to work on. Rsp
 rspec --init
 {% endhighlight %}
 
-With that command, you'll now have a hidden file named <em>.rspec</em> and a <em>spec/</em> directory containing a default <em>spec_helper.rb</em> file.
+With that command, you'll now have a hidden file named <em>.rspec</em> and a directory containing a default helper file: <em>spec/spec_helper.rb</em>.
 
-Within the <em>spec/</em> directory that RSpec created for you, create a new file to hold your first tests. The typical naming convention is <em>name_spec.rb</em>, where <em>name</em> is the project or class you want to run tests on.
+Within the <em>spec/</em> directory that RSpec created for you, create a new file to hold your first tests. The typical naming convention is <em>name_spec.rb</em>, where <em>name</em> is the project or class you want to run tests on. Below is an example with my own spec file.
+
+{% highlight ruby %}
+.rspec
+spec/
+    spec_helper.rb
+    mta_api_spec.rb
+{% endhighlight %}
+
+<h4>The Basic Layout of RSpec</h4>
+
 
 <ul>
   <li>What is RSpec?</li>
