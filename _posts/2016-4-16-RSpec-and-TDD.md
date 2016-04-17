@@ -1,8 +1,19 @@
 ---
 layout: post
 title: Tests are for Day Two
-subtitle: RSpec and Test-Driven Development
 ---
+
+<h2>RSpec and Test-Driven Development</h2>
+
+<ul>
+<li>Day One</li>
+<li>RSpec</li>
+<ul>
+<li>Getting Started</li>
+<li>The Basic Layout of RSpec</li>
+</ul>
+</ul>
+
 
 <h3>Day One</h3>
 
