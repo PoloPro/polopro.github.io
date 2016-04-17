@@ -14,6 +14,7 @@ title: Tests are for Day Two
 </ul>
 </ul>
 
+<hr>
 
 <h2>Day One</h2>
 
@@ -23,7 +24,9 @@ Immediately you pull out your phone and begin writing furiously. Idea after idea
 
 That's Day One. Tests are for Day Two. 
 
-You shuffle into work and look at what you wrote the day before. It's sloppy, rambling stuff that ends in the middle of a line. Your diagrams are unreadable scribbles, your notes autocorrected to gibberish. Picking up the pieces of your frenzied coding and laying out a plan forward--that's Day Two. 
+You shuffle into work and look at what you wrote the day before. It's sloppy, rambling stuff that ends in the middle of a line. Your diagrams are unreadable scribbles, your notes autocorrected to gibberish. Picking up the pieces of your frenzied coding and laying out a plan forward--that's Day Two.
+
+<hr> 
 
 <h2>RSpec</h2>
 
