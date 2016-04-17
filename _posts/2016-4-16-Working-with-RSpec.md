@@ -1,12 +1,11 @@
 ---
 layout: post
-title: RSpec and Test-Driven Development
-subtitle: MTA Subway Countdown Clock
+title: Working with RSpec
 ---
 
 <ul>
-  <li>What is test-driven development?</li>
   <li>What is RSpec?</li>
+  RSpec is a Ruby testing library that provides 
   <li>Getting started, rspec --init</li>
   <ol>Basic layout of Rspec
     <li>Describe</li>
