@@ -1,9 +1,8 @@
 ---
 layout: post
-title: RSpec and Test-Driven Development
+title: Tests are for Day Two
+subtitle: RSpec and Test-Driven Development
 ---
-
-Tests are for Day Two.
 
 Every programmer knows the feeling of a Day One. You may be waiting in line for coffee, or folding laundry, or meeting a friend for dinner. You're thinking about some project from work, maybe just complaining to yourself about an inconvenience. Suddenly, inspiration. A real eureka moment--a lightning bolt of clarity. 
 
@@ -11,7 +10,9 @@ Immediately you pull out your phone and begin writing furiously. Idea after idea
 
 That's Day One.
 
-But, like I said, tests are for Day Two.
+Tests are for Day Two. 
+
+When you shuffle into work and look at what you wrote the day before--sloppy, rambling stuff that ends in the middle of a line. Your diagrams are unreadable scribbles, your notes autocorrected to gibberish. 
 
 
 
