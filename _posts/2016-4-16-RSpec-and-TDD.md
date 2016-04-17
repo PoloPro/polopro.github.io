@@ -20,8 +20,8 @@ RSpec is, at its core, a testing library for Ruby. It's doubtless the most popul
 
 To walk you through RSpec and test-driven development in general, I'll use a project I recently Day One'd: a reimplementation of NYC's subway countdown clocks using the MTA real-time API. 
 
-<h4>RSpec Basics</h4>
-To get started writing tests for your project, you'll need to install the RSpec gem in your working directory.
+<h4>Getting Started</h4>
+To start writing tests for your project, you'll first need to install the RSpec gem in your working directory.
 
 {% highlight ruby %}
 gem install rspec
@@ -35,6 +35,7 @@ rspec --init
 
 With that command, you'll now have a hidden file named '.rspec' and a 'spec/' directory containing a default 'spec_helper.rb' file.
 
+Within the 'spec/' directory that RSpec created for you, create a new file to hold your first tests. The typical naming convention is 'name_spec.rb', where 'name' is the project or class you want to run tests on.
 
 <ul>
   <li>What is RSpec?</li>
