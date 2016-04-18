@@ -153,19 +153,15 @@ This is because <strong>expect</strong> has the method <strong>.to</strong>, not
 
 <h3>Running RSpec</h3>
 <hr>
-Now that you have a test, it's time to run it. Thankfully, running RSpec tests involves just a single command.
+Now that you have some tests, it's time to run them. Thankfully, running RSpec tests involves just a single command.
 
 {% highlight ruby %}
 rspec
-{% endhighlight %}
-
-That's it! Run <strong>rspec</strong> in your project directory (the one containing the hidden <em>.rspec</em> file), and RSpec will run all the spec files in your <em>spec/</em> directory. 
-
-If you want to run only the tests in a specific spec file, use the filename as an argument.
-
-{% highlight ruby %}
+# or specify a filename
 rspec mta_api_spec.rb
 {% endhighlight %}
+
+That's it! Run <strong>rspec</strong> in your project directory (the one containing the hidden <em>.rspec</em> file), and RSpec will run all the spec files in your <em>spec/</em> directory. (Note: if you want to run only the tests in a specific spec file, use the filename as an argument.)
 
 Now, what does this output?
 
@@ -185,7 +181,18 @@ That's much better! We can even save this fully formatted output to a file, if w
 rspec spec --format documentation --out rspec.txt
 {% endhighlight %}
 
+But with all the tests green, there's not much information to help us debug. Let's remove some code and see if we can get some tests to fail.
 
+
+Now we can look at the error thrown during the failing test. Evidently there isn't a method called <strong>.id</strong> on that <strong>Stop</strong> object. But why is there a Stop object interfering with our <strong>#next_n_arrivals</strong> test? We only want to know if the behavior "<strong>returns an array of hashes</strong>" is true, the methods and functionality of the other object shouldn't be part of our test! This will be partially rectified with the RSpec concepts of <strong>before</strong>, <strong>after</strong>, and <strong>let</strong>. But, in general, you should "mock up" information that is generated externally. If you need a Stop object to test your method, manually create a new one with explicit values. You simultaneously partition your tests and have a single object state to work with.
+
+Finally, if you have a large number of tests failing and want to view just a single failure for debugging, use the <strong>--fail-fast</strong> flag.
+
+{% highlight ruby %}
+rspec -fd --fail-fast
+{% endhighlight %}
+
+We'll now have a single, detailed error to debug, rather than a Terminal screen filled with red.
 
 <h3>Test-Driven Development</h3>
 <hr>
@@ -220,7 +227,7 @@ Test-driven development is built on iterative design, slowly building towards yo
 
 <h3>Advanced RSpec</h3>
 <hr>
-With j
+
 
 
 
@@ -241,7 +248,7 @@ With j
     <li>Before, after, and let</li>
     <!-- <li>When to use blocks and when to use parantheses</li> -->
   </ol>
-  <li>Running Rspec, --fail-fast and -fd</li>
+  <!-- Running Rspec, --fail-fast and -fd</li> -->
   <li>The style guide</li>
   <li>Where to find this MTA project</li>
   <li>Helpful resources and credit</li>
