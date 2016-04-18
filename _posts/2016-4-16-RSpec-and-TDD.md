@@ -48,7 +48,7 @@ rspec --init
 
 With that command, you'll now have a hidden file named <em>.rspec</em> and a directory containing a default helper file: <em>spec/spec_helper.rb</em>.
 
-Within the <em>spec/</em> directory that RSpec created for you, create a new file to hold your first tests. The typical naming convention is <em>name_spec.rb</em>, where <em>name</em> is the project or class you want to run tests on. Below is an example with my own spec file.
+Within the <em>spec/</em> directory that RSpec created for you, you can create a new file to hold your first tests. The typical naming convention is <em>name_spec.rb</em>, where <em>name</em> is the project or class you want to run tests on. Below is an example with my own spec file.
 
 {% highlight ruby %}
 .rspec
@@ -56,6 +56,8 @@ spec/
     spec_helper.rb
     mta_api_spec.rb
 {% endhighlight %}
+
+From here you can start pulling together your Day One work into a coherent project. However, that requires some basic knowledge of how to organize your RSpec.
 
 <h3>The Basic Layout of RSpec</h3>
 <hr>
@@ -79,7 +81,7 @@ describe 'MTA Countdown Clock'
 
  I've omitted some formatting here to show the layout more clearly (the full test file is available with the rest of the project on Github).
 
- The first block, <strong>MTA Countdown Clock</strong>, is the project I'm testing. As your projects get more complicated and you develop more and more tests, you may want to break your testing into multiple spec files. For this relatively straightforward application, I'll limit my tests to a single file. 
+ The first block, <strong>'MTA Countdown Clock'</strong>, is the project I'm testing. As your projects get more complicated and you develop more and more tests, you may want to break your testing into multiple spec files. For this relatively straightforward application, I'll limit my tests to a single file. 
 
  The second layer of describe blocks contain my classes. Although these classes are all interdependent in the final application, we want to isolate them for testing. An error in one test shouldn't carry over into any other test (this is called cascading failure).
 
@@ -107,6 +109,16 @@ describe 'API Interface' do
       it 'returns an array of hashes' do
       end
     end
+end
+{% endhighlight %}
+
+<strong>#load_realtime_data</strong> is the first method my program calls, so it's a good place to start testing. It blocks are where you'll list the expected behavior of your method or class, and they typically have longer, more natural descriptors. Let's take a look at the first block.
+
+{% highlight ruby %}      
+it 'loads gtfs data from the server without error' do
+    url = "http://www.info.mta.com"
+    interface = MtaApiInterface.new(url)
+    expect{ interface.load_realtime_data }.to_not raise_error
 end
 {% endhighlight %}
 
