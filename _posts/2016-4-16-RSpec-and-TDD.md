@@ -207,7 +207,7 @@ rspec -fd --fail-fast
 We'll now have a single, detailed error to debug, rather than a Terminal screen filled with red.
 
 
-<h2 id="tdd">Test-Driven Development</h3>
+<h2 id="tdd">Test-Driven Development</h2>
 <hr>
 Basic RSpec firmly under your belt, you're well on the way to taming that unruly Day One code. With the ability to write tests you can now begin test-driven development, or TDD, which is the heart of Day Two (and every day after). Compared to the creative rambling of your first day, TDD is a precision instrument. It involves five major steps:
 
