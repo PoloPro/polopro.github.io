@@ -123,7 +123,9 @@ end
 
 Ah, finally we've reached a test! Within the it block, we define a <strong>url</strong> variable, instantiate a <strong>MtaApiInterface</strong> object, and then provide an expectation for the test. The first two lines are just Ruby code, but the <strong>expect</strong> is specific to RSpec.
 
-<strong>Expect</strong> statements resemble natural language, and can be interpreted fairly easily. In the above example, we expect the block <strong>{ interface.load_realtime_data }</strong> to not raise an error. So does <strong>expect</strong> always take a block as an argument?
+<strong>Expect</strong> statements resemble natural language, and can be interpreted fairly easily. For example, in the code above, we expect the block <strong>{ interface.load_realtime_data }</strong> to not raise an error. 
+
+So, does <strong>expect</strong> always take a block as an argument?
 
 {% highlight ruby %}
 it 'returns an array of hashes' do
@@ -137,7 +139,7 @@ Two of our lines are unchanged (we'll discuss how we can stop that repetition wi
 
 When writing an expectation, use parentheses if you want to test the VALUE returned from the statement. In this case, we want to test if a random element of the <strong>#load_realtime_data</strong> return array is a Hash. In the previous example, the return value of the method wasn't really our concern. We wanted to see if the method itself raised an error. In that case, we use a block.
 
-There is <a href="http://www.rubydoc.info/github/rspec/rspec-expectations/RSpec/Matchers" target="_blank">excellent documentation</a> available for both <strong>expect</strong> and its matchers, but there is a common error that you may run into with spacing. Usually Ruby is very forgiving with whitespace, and--style guide aside--line organization is up to the programmer. When writing an expectation, however, make sure that there is no space between <strong>expect</strong> and the following argument!
+There is <a href="http://www.rubydoc.info/github/rspec/rspec-expectations/RSpec/Matchers" target="_blank">excellent documentation</a> available for both <strong>expect</strong> and its matchers, but there is a common error that you may run into with spacing. Usually Ruby is very forgiving with whitespace, and--style guide aside--organization is up to the programmer. When writing an expectation, however, make sure that there is no space between <strong>expect</strong> and the following argument!
 
 {% highlight ruby %}
 # bad
@@ -151,6 +153,16 @@ This is because <strong>expect</strong> has the method <strong>.to</strong>, not
 
 <h3>Running RSpec Tests</h3>
 <hr>
+With basic RSpec under your belt, you're well on the way to taming that unruly Day One code. With the ability to write tests you can now begin test-driven development, or TDD, which is the heart of Day Two (and every day after). Compared to the creative rambling of your first day, TDD is a precision instrument. It involves five major steps:
+
+<ol>
+<li>Write a small test</li>
+<li>Run the test and fail it</li>
+<li>Code!</li>
+<li>Run the test and pass it</li>
+<li>Make your code pretty</li>
+</ol>
+
 
 
 
@@ -177,7 +189,7 @@ This is because <strong>expect</strong> has the method <strong>.to</strong>, not
   <li>Helpful resources and credit</li>
 </ul>
 
-Ten lines of code, test. Ten lines of code, test. Refactor. A few small steps at a time, always with the end goal in mind. That's Day Two and every day after.
+
 
 
 
