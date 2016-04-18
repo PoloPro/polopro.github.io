@@ -151,18 +151,76 @@ expect{ apples_and_oranges }.to change(basket.count).by(1)
 
 This is because <strong>expect</strong> has the method <strong>.to</strong>, not the block or value itself. Don't let the natural language feel of RSpec trick you into putting a space after expect!
 
-<h3>Running RSpec Tests</h3>
+<h3>Running RSpec</h3>
 <hr>
-With basic RSpec under your belt, you're well on the way to taming that unruly Day One code. With the ability to write tests you can now begin test-driven development, or TDD, which is the heart of Day Two (and every day after). Compared to the creative rambling of your first day, TDD is a precision instrument. It involves five major steps:
+Now that you have a test, it's time to run it. Thankfully, running RSpec tests involves just a single command.
+
+{% highlight ruby %}
+rspec
+{% endhighlight %}
+
+That's it! Run <strong>rspec</strong> in your project directory (the one containing the hidden <em>.rspec</em> file), and RSpec will run all the spec files in your <em>spec/</em> directory. 
+
+If you want to run only the tests in a specific spec file, use the filename as an argument.
+
+{% highlight ruby %}
+rspec mta_api_spec.rb
+{% endhighlight %}
+
+Now, what does this output?
+
+
+That's not very descriptive, beyond telling us that all of our tests are passing. Let's try it again with the <strong>-fd</strong> flag.
+
+{% highlight ruby %}
+rspec -fd
+# or
+rspec -format documentation
+{% endhighlight %}
+
+
+That's much better! We can even save this fully formatted output to a file, if we'd like. 
+
+{% highlight ruby %}
+rspec spec --format documentation --out rspec.txt
+{% endhighlight %}
+
+
+
+<h3>Test-Driven Development</h3>
+<hr>
+Basic RSpec firmly under your belt, you're well on the way to taming that unruly Day One code. With the ability to write tests you can now begin test-driven development, or TDD, which is the heart of Day Two (and every day after). Compared to the creative rambling of your first day, TDD is a precision instrument. It involves five major steps:
 
 <ol>
-<li>Write a small test</li>
-<li>Run the test and fail it</li>
-<li>Code!</li>
-<li>Run the test and pass it</li>
-<li>Make your code pretty</li>
+<li><strong>Write a small test</strong></li>
+<li><strong>Run the test and fail it</strong></li>
+<li><strong>Code!</strong></li>
+<li><strong>Run the test and pass it</strong></li>
+<li><strong>Make your code pretty</strong></li>
 </ol>
 
+Each step is simple but necessary.
+
+<ol>
+<li><strong>Write a small test</strong></li>
+  Write a test that covers just a single method or a dozen lines of code. You'll be repeating this list many times, and you want to slowly build functionality rather than rush headlong.
+<li><strong>Run the test and fail it</strong></li>
+  This is an important step! Your test shouldn't pass before you've coded a solution to it. If it does, your test is independent of your code, which is useless. If you're writing tests for legacy code (even if it's your own from the day before), continue adding tests, one small group at a time, until you reach the 'failing' edge of your code. This breadcrumb trail of tests will provide valuable information if later features are difficult to debug.
+<li><strong>Code!</strong></li>
+  Code a solution to the small test you've written. Don't worry about elegance or run-time yet, just write the most direct code to get that test green.
+<li><strong>Run the test and pass it</strong></li>
+  Everyone's favorite part! Run your test and pass it. Bask in the warmth of RSpec's beautiful green 'passing' tests. If you're failing at this step, go back to your code and fix it until your test passes!
+<li><strong>Make your code pretty</strong></li>
+  Now, with the test passing, go back to your solution. Is it well-structured? Is it efficient and cleanly formatted? Does it duplicate any previous functionality? Can it be abstracted? Refactor it until you're proud of it.
+</ol>
+
+The final step, perhaps the most important one: <strong>repeat the process</strong>! 
+
+Test-driven development is built on iterative design, slowly building towards your final goal. These five steps aren't necessarily fun, nor are they particularly fast or beautiful. Instead, they require you to keep "what is my project supposed to <em>do</em>?"" in your mind at all times. If a branch of your code doesn't work towards your final product, you'll find yourself asking "why am I writing tests for this?" TDD encourages straightforward, almost single-minded design. It's not a solution for every project or every pitfall, but it does provide a process for developing sturdy, practical code. It's for Day Two.
+
+<h3>Advanced RSpec</h3>
+<hr>
+With j
 
 
 
