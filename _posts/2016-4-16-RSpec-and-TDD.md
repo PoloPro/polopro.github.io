@@ -168,7 +168,7 @@ That's it! Run <strong>rspec</strong> in your project directory (the one contain
 
 Now, what does this output?
 
-<img src="../rspec_no_fd.png">
+<img src="../assets/rspec_no_fd.png" alt="Simple RSpec">
 
 That's not very descriptive, beyond telling us that all of our tests are passing. Let's try it again with the <strong>-fd</strong> flag.
 
@@ -178,7 +178,7 @@ rspec -fd
 rspec --format documentation
 {% endhighlight %}
 
-<img src="../rspec_no_errors.png">
+<img src="../assets/rspec_no_errors.png" alt="FD RSpec with no errors">
 
 That's much better! We can even save this fully formatted output to a file, if we'd like. 
 
@@ -188,7 +188,7 @@ rspec spec --format documentation --out rspec.txt
 
 But with all the tests green, there's not much information to help us debug. Let's remove some code and see if we can get some tests to fail.
 
-<img src="../rspec_with_errors.png">
+<img src="../assets/rspec_with_errors.png" alt="FD RSpec with errors">
 
 Now we can look at the error thrown during the failing test. Evidently there isn't a method called <strong>.id</strong> on that <strong>Stop</strong> object. But why is there a Stop object interfering with our <strong>#next_n_arrivals</strong> test? We only want to know if the behavior "<strong>returns an array of hashes</strong>" is true, the methods and functionality of the other object shouldn't be part of our test! This will be partially rectified with the RSpec concepts of <strong>before</strong>, <strong>after</strong>, and <strong>let</strong>. But, in general, you should "mock up" information that is generated externally. If you need a Stop object to test your method, manually create a new one with explicit values. You simultaneously partition your tests and have a single object state to work with.
 
