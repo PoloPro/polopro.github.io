@@ -14,7 +14,7 @@ title: Tests Are for Day Two
     <li><a href="#running">Running RSpec</a></li>
   </ul>
   <li><a href="#tdd">Test-Driven Development</a></li>
-  <li><a href="advanced">Advanced RSpec</a></li>
+  <li><a href="#advanced">Advanced RSpec</a></li>
   <li><a href="#daytwo">Day Two</a></li>
   <li><a href="#links">Links</a></li>
 </ul>
