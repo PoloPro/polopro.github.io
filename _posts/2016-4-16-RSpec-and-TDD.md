@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tests are for Day Two
+title: Tests Are for Day Two
 ---
 
 <h2>RSpec and Test-Driven Development</h2>
