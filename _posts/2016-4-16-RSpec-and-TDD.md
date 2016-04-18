@@ -11,7 +11,7 @@ title: Tests are for Day Two
   <ul>
     <li><a href="#started">Getting Started</a></li>
     <li><a href="#layout">The Basic Layout of RSpec</a></li>
-    <li><a href="#tests">The Tests</a></li>
+    <li><a href="#running">Running RSpec</a></li>
   </ul>
   <li><a href="#tdd">Test-Driven Development</a></li>
   <li><a href="#daytwo">Day Two</a></li>
@@ -64,7 +64,7 @@ From here you can start pulling together your Day One work into a coherent proje
 
 <h3 id="layout">The Basic Layout of RSpec</h3>
 <hr>
-<h4 id="describe">Describe</h4>
+<h4>Describe</h4>
 An RSpec spec (aha) can basically be broken down into a series of <strong>describe</strong> blocks. These blocks model the structure of your program, usually matching your classes and methods. From my <em>mta_api_spec</em>:
 
 {% highlight ruby %}
@@ -99,7 +99,7 @@ Note the naming convention: instead of <strong>'the schedule is created properly
 
 Also important to note is the prefix. A <strong>period</strong> indicates the method is a <strong>class method</strong>, while a <strong>octothorpe (#)</strong> indicates the method is an <strong>instance method</strong>.
 
-<h4 id="tests">The Tests</h4>
+<h4>Writing the Tests</h4>
 
 Describe blocks organize and provide context for your tests, but they don't test any functionality themselves. For that you need to use <strong>it</strong> blocks.
 
@@ -168,6 +168,7 @@ That's it! Run <strong>rspec</strong> in your project directory (the one contain
 
 Now, what does this output?
 
+<img src="../rspec_no_fd.png">
 
 That's not very descriptive, beyond telling us that all of our tests are passing. Let's try it again with the <strong>-fd</strong> flag.
 
@@ -177,6 +178,7 @@ rspec -fd
 rspec --format documentation
 {% endhighlight %}
 
+<img src="../rspec_no_errors.png">
 
 That's much better! We can even save this fully formatted output to a file, if we'd like. 
 
@@ -186,6 +188,7 @@ rspec spec --format documentation --out rspec.txt
 
 But with all the tests green, there's not much information to help us debug. Let's remove some code and see if we can get some tests to fail.
 
+<img src="../rspec_with_errors.png">
 
 Now we can look at the error thrown during the failing test. Evidently there isn't a method called <strong>.id</strong> on that <strong>Stop</strong> object. But why is there a Stop object interfering with our <strong>#next_n_arrivals</strong> test? We only want to know if the behavior "<strong>returns an array of hashes</strong>" is true, the methods and functionality of the other object shouldn't be part of our test! This will be partially rectified with the RSpec concepts of <strong>before</strong>, <strong>after</strong>, and <strong>let</strong>. But, in general, you should "mock up" information that is generated externally. If you need a Stop object to test your method, manually create a new one with explicit values. You simultaneously partition your tests and have a single object state to work with.
 
