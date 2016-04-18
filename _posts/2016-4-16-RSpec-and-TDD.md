@@ -33,6 +33,7 @@ RSpec is, at its core, a testing library for Ruby. It's a Day Two tool. It's dou
 To walk you through RSpec and test-driven development in general, I'll use a project I recently Day One'd: a reimplementation of NYC's subway countdown clocks using the MTA real-time API. 
 
 <h3>Getting Started</h3>
+<hr>
 To start writing tests for your project, you'll first need to install the RSpec gem in your working directory.
 
 {% highlight ruby %}
@@ -57,7 +58,7 @@ spec/
 {% endhighlight %}
 
 <h3>The Basic Layout of RSpec</h3>
-
+<hr>
 <h4>Describe</h4>
 An RSpec spec (aha) can basically be broken down into a series of <strong>describe</strong> blocks. These blocks model the structure of your program, usually matching your classes and methods. From my <em>mta_api_spec</em>:
 
@@ -76,9 +77,9 @@ describe 'MTA Countdown Clock'
     describe 'Stop'
 {% endhighlight %}
 
- I've omitted some formatting to show the layout more clearly. 
+ I've omitted some formatting here to show the layout more clearly (the full test file is available with the rest of the project on Github).
 
- The first block, <em>MTA Countdown Clock</em>, is the project I'm testing. As your projects get more complicated and you develop more and more tests, you may want to break your testing into multiple spec files. For this relatively straightforward application, I'll limit my tests to a single file. 
+ The first block, <strong>MTA Countdown Clock</strong>, is the project I'm testing. As your projects get more complicated and you develop more and more tests, you may want to break your testing into multiple spec files. For this relatively straightforward application, I'll limit my tests to a single file. 
 
  The second layer of describe blocks contain my classes. Although these classes are all interdependent in the final application, we want to isolate them for testing. An error in one test shouldn't carry over into any other test (this is called cascading failure).
 
@@ -89,7 +90,7 @@ describe '.create'
 describe '#next_n_arrivals'
 {% endhighlight %}
 
-Note the naming convention: instead of <em>'the schedule is created properly'</em>, I simply use <em>'.create'</em>. More descriptive test conditions will come in the <strong>it</strong> statements later. 
+Note the naming convention: instead of <strong>'the schedule is created properly'</strong>, I simply use <strong>'.create'</strong>. More descriptive test conditions will come in the <strong>it</strong> statements later. 
 
 Also important to note is the prefix. A <strong>period</strong> indicates the method is a <strong>class method</strong>, while a <strong>octothorpe (#)</strong> indicates the method is an <strong>instance method</strong>.
 
