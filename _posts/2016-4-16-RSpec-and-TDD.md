@@ -19,7 +19,7 @@ title: Tests are for Day Two
 <hr>
 Every programmer knows the feeling of Day One. You may be waiting in line for coffee, or folding laundry, or meeting a friend for dinner. You're thinking about some project from work, maybe just complaining to yourself about an inconvenience. Suddenly, inspiration. A real eureka moment--a lightning bolt of clarity. 
 
-Immediately you pull out your phone and begin writing furiously. Idea after idea flying onto your default notes app, mispellings left as tomorrow's problem. You need to write this down <em>now</em>. Your coffee, wrinkled laundry, or unfortunate friend is long forgotten. When you finally reach your computer, the rest of the day slides into a blur. One hand is diagramming while the other pours out beautiful, natural code. It's easier than speaking. As you stumble into bed, hours later, you're perfectly content with the world. 
+Immediately you pull out your phone and begin writing furiously. Idea after idea flying onto your default notes app, misspellings left as tomorrow's problem. You need to write this down <em>now</em>. Your coffee, wrinkled laundry, or unfortunate friend is long forgotten. When you finally reach your computer, the rest of the day slides into a blur. One hand is diagramming while the other pours out beautiful, natural code. It's easier than speaking. As you stumble into bed, hours later, you're perfectly content with the world. 
 
 That's Day One. Tests are for Day Two. 
 
@@ -113,7 +113,7 @@ end
 
 <strong>#load_realtime_data</strong> is the first method my program calls, so it's a good place to start testing. It blocks are where you'll list the expected behavior of your method or class, and they typically have longer, more natural descriptors. Let's take a look at the first block.
 
-{% highlight ruby %}      
+{% highlight ruby %}
 it 'loads gtfs data from the server without error' do
     url = "http://www.info.mta.com"
     interface = MtaApiInterface.new(url)
@@ -121,9 +121,39 @@ it 'loads gtfs data from the server without error' do
 end
 {% endhighlight %}
 
-Ah, finally we've reached a test! Within the it block, we define a <strong>url</strong> variable, instantiate a <strong>MtaApiInterface</strong> object, and then provide an expectation for the test. 
+Ah, finally we've reached a test! Within the it block, we define a <strong>url</strong> variable, instantiate a <strong>MtaApiInterface</strong> object, and then provide an expectation for the test. The first two lines are just Ruby code, but the <strong>expect</strong> is specific to RSpec.
 
-<strong>Expect</strong> statements resemble natural language, and can be interpreted fairly easily. In the above example, we <strong>expect</strong> the block <strong>{ interface.load_realtime_data }</strong> to not raise an error.
+<strong>Expect</strong> statements resemble natural language, and can be interpreted fairly easily. In the above example, we expect the block <strong>{ interface.load_realtime_data }</strong> to not raise an error. So does <strong>expect</strong> always take a block as an argument?
+
+{% highlight ruby %}
+it 'returns an array of hashes' do
+    url = "http://www.info.mta.com"
+    interface = MtaApiInterface.new(url)
+    expect(interface.load_realtime_data.sample).to be_a(Hash)
+end
+{% endhighlight %}
+
+Two of our lines are unchanged (we'll discuss how we can stop that repetition with <strong>let</strong> statements), but <strong>expect</strong> now takes in a value argument instead of a block! Why?
+
+When writing an expectation, use parentheses if you want to test the VALUE returned from the statement. In this case, we want to test if a random element of the <strong>#load_realtime_data</strong> return array is a Hash. In the previous example, the return value of the method wasn't really our concern. We wanted to see if the method itself raised an error. In that case, we use a block.
+
+There is <a href="http://www.rubydoc.info/github/rspec/rspec-expectations/RSpec/Matchers" target="_blank">excellent documentation</a> available for both <strong>expect</strong> and its matchers, but there is a common error that you may run into with spacing. Usually Ruby is very forgiving with whitespace, and--style guide aside--line organization is up to the programmer. When writing an expectation, however, make sure that there is no space between <strong>expect</strong> and the following argument!
+
+{% highlight ruby %}
+# bad
+expect { apples_and_oranges }.to raise_error
+
+# good
+expect{ apples_and_oranges }.to change(basket.count).by(1)
+{% endhighlight %}
+
+This is because <strong>expect</strong> has the method <strong>.to</strong>, not the block or value itself. Don't let the natural language feel of RSpec trick you into putting a space after expect!
+
+<h3>Running RSpec Tests</h3>
+<hr>
+
+
+
 
 
 <ul>
@@ -131,15 +161,15 @@ Ah, finally we've reached a test! Within the it block, we define a <strong>url</
   <!-- <li>Getting started, rspec --init</li> -->
   <!-- <ol>Basic layout of Rspec -->
     <!-- <li>Describe</li> -->
-    <li>It/do, It/not_do</li>
-    <li>Expect (note spacing)</li>
+    <!-- <li>It/do, It/not_do</li> -->
+    <!-- <li>Expect (note spacing)</li> -->
     <!-- <li>Nesting describe blocks</li> -->
-  </ol>
+  <!-- </ol> -->
   <ol>More advanced Rspec
-    <li>Class v instance methods, naming</li>
+    <!-- <li>Class v instance methods, naming</li> -->
     <li>Context blocks v describe blocks</li>
     <li>Before, after, and let</li>
-    <li>When to use blocks and when to use parantheses</li>
+    <!-- <li>When to use blocks and when to use parantheses</li> -->
   </ol>
   <li>Running Rspec, --fail-fast and -fd</li>
   <li>The style guide</li>
