@@ -105,7 +105,6 @@ describe 'API Interface' do
     describe '#load_realtime_data' do
       it 'loads gtfs data from the server without error' do
       end
-
       it 'returns an array of hashes' do
       end
     end
@@ -122,6 +121,9 @@ it 'loads gtfs data from the server without error' do
 end
 {% endhighlight %}
 
+Ah, finally we've reached a test! Within the it block, we define a <strong>url</strong> variable, instantiate a <strong>MtaApiInterface</strong> object, and then provide an expectation for the test. 
+
+<strong>Expect</strong> statements resemble natural language, and can be interpreted fairly easily. In the above example, we <strong>expect</strong> the block <strong>{ interface.load_realtime_data }</strong> to not raise an error.
 
 
 <ul>
