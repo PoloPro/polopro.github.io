@@ -6,16 +6,19 @@ title: Tests are for Day Two
 <h2>RSpec and Test-Driven Development</h2>
 <hr>
 <ul>
-<li>Day One</li>
-<li>RSpec</li>
-<ul>
-<li>Getting Started</li>
-<li>The Basic Layout of RSpec</li>
-</ul>
+  <li><a href="#dayone">Day One</a></li>
+  <li><a href="#rspec">RSpec</a></li>
+  <ul>
+    <li><a href="#started">Getting Started</a></li>
+    <li><a href="#layout">The Basic Layout of RSpec</a></li>
+    <li><a href="#tests">The Tests</a></li>
+  </ul>
+  <li><a href="#tdd">Test-Driven Development</a></li>
+  <li><a href="#daytwo">Day Two</a></li>
+  <li><a href="#links">Links</a></li>
 </ul>
 
-
-<h2>Day One</h2>
+<h2 id="dayone">Day One</h2>
 <hr>
 Every programmer knows the feeling of Day One. You may be waiting in line for coffee, or folding laundry, or meeting a friend for dinner. You're thinking about some project from work, maybe just complaining to yourself about an inconvenience. Suddenly, inspiration. A real eureka moment--a lightning bolt of clarity. 
 
@@ -26,13 +29,13 @@ That's Day One. Tests are for Day Two.
 You shuffle into work and look at what you wrote the day before. It's sloppy, rambling stuff that ends in the middle of a line. Your diagrams are unreadable scribbles, your notes autocorrected to gibberish. Picking up the pieces of your frenzied coding and laying out a plan forward--that's Day Two.
 
 
-<h2>RSpec</h2>
+<h2 id="rspec">RSpec</h2>
 <hr>
 RSpec is, at its core, a testing library for Ruby. It's a Day Two tool. It's doubtless the most popular in use today, providing a rough approximation of natural language for test-writing.
 
 To walk you through RSpec and test-driven development in general, I'll use a project I recently Day One'd: a reimplementation of NYC's subway countdown clocks using the MTA real-time API. 
 
-<h3>Getting Started</h3>
+<h3 id="started">Getting Started</h3>
 <hr>
 To start writing tests for your project, you'll first need to install the RSpec gem in your working directory.
 
@@ -59,9 +62,9 @@ spec/
 
 From here you can start pulling together your Day One work into a coherent project. However, that requires some basic knowledge of how to organize your RSpec.
 
-<h3>The Basic Layout of RSpec</h3>
+<h3 id="layout">The Basic Layout of RSpec</h3>
 <hr>
-<h4>Describe</h4>
+<h4 id="describe">Describe</h4>
 An RSpec spec (aha) can basically be broken down into a series of <strong>describe</strong> blocks. These blocks model the structure of your program, usually matching your classes and methods. From my <em>mta_api_spec</em>:
 
 {% highlight ruby %}
@@ -96,7 +99,7 @@ Note the naming convention: instead of <strong>'the schedule is created properly
 
 Also important to note is the prefix. A <strong>period</strong> indicates the method is a <strong>class method</strong>, while a <strong>octothorpe (#)</strong> indicates the method is an <strong>instance method</strong>.
 
-<h4>The Tests</h4>
+<h4 id="tests">The Tests</h4>
 
 Describe blocks organize and provide context for your tests, but they don't test any functionality themselves. For that you need to use <strong>it</strong> blocks.
 
@@ -151,7 +154,7 @@ expect{ apples_and_oranges }.to change(basket.count).by(1)
 
 This is because <strong>expect</strong> has the method <strong>.to</strong>, not the block or value itself. Don't let the natural language feel of RSpec trick you into putting a space after expect!
 
-<h3>Running RSpec</h3>
+<h3 id="running">Running RSpec</h3>
 <hr>
 Now that you have some tests, it's time to run them. Thankfully, running RSpec tests involves just a single command.
 
@@ -171,7 +174,7 @@ That's not very descriptive, beyond telling us that all of our tests are passing
 {% highlight ruby %}
 rspec -fd
 # or
-rspec -format documentation
+rspec --format documentation
 {% endhighlight %}
 
 
@@ -194,7 +197,7 @@ rspec -fd --fail-fast
 
 We'll now have a single, detailed error to debug, rather than a Terminal screen filled with red.
 
-<h3>Test-Driven Development</h3>
+<h3 id="tdd">Test-Driven Development</h3>
 <hr>
 Basic RSpec firmly under your belt, you're well on the way to taming that unruly Day One code. With the ability to write tests you can now begin test-driven development, or TDD, which is the heart of Day Two (and every day after). Compared to the creative rambling of your first day, TDD is a precision instrument. It involves five major steps:
 
@@ -225,54 +228,81 @@ The final step, perhaps the most important one: <strong>repeat the process</stro
 
 Test-driven development is built on iterative design, slowly building towards your final goal. These five steps aren't necessarily fun, nor are they particularly fast or beautiful. Instead, they require you to keep "what is my project supposed to <em>do</em>?"" in your mind at all times. If a branch of your code doesn't work towards your final product, you'll find yourself asking "why am I writing tests for this?" TDD encourages straightforward, almost single-minded design. It's not a solution for every project or every pitfall, but it does provide a process for developing sturdy, practical code. It's for Day Two.
 
-<h3>Advanced RSpec</h3>
+<h3 id="advanced">Advanced RSpec</h3>
 <hr>
+Even in RSpec, there's always room for the Ruby mantra "don't repeat yourself." With the simple method of writing tests, you'll be repeating environment setup for every test that uses a common object or interface. <strong>Before</strong>, <strong>after</strong>, and <strong>let</strong> are RSpec blocks that help trim that repetitive code.
 
-
-
-
-
-
-<ul>
-  <!-- <li>What is RSpec?</li> -->
-  <!-- <li>Getting started, rspec --init</li> -->
-  <!-- <ol>Basic layout of Rspec -->
-    <!-- <li>Describe</li> -->
-    <!-- <li>It/do, It/not_do</li> -->
-    <!-- <li>Expect (note spacing)</li> -->
-    <!-- <li>Nesting describe blocks</li> -->
-  <!-- </ol> -->
-  <ol>More advanced Rspec
-    <!-- <li>Class v instance methods, naming</li> -->
-    <li>Context blocks v describe blocks</li>
-    <li>Before, after, and let</li>
-    <!-- <li>When to use blocks and when to use parantheses</li> -->
-  </ol>
-  <!-- Running Rspec, --fail-fast and -fd</li> -->
-  <li>The style guide</li>
-  <li>Where to find this MTA project</li>
-  <li>Helpful resources and credit</li>
-</ul>
-
-
-
-
-
-
-
-Brian Ferris has written an excellent series of tutorials on using realtime GTFS data:
-
-http://goo.gl/zS7ti
-
+<strong>Before</strong> blocks are the most common. Within a describe block, you may have a set of variables or objects that need to be instantiated before every test. 
 
 {% highlight ruby %}
-def show
-  @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
+describe 'API Interface' do
+    before(:all) do
+        @realtime_url = "http://www.realtime_url.com"
+        @stations_url = "http://www.stations_url.com"
+    end
+    before(:each) do
+        station = ["Grand Central", "Times Square"].sample
+    end
+{% endhighlight %}
+
+Here we have examples of <strong>before(:all)</strong> and <strong>before(:each)</strong>. Again, RSpec's natural language design helps us interpret the functionality here. <strong>Before(:all)</strong> will run the block a single time before any of the tests (before all of the other code). Any instance variables defined here will be available in the test blocks. 
+
+<strong>Before(:each)</strong> will instead run the block once before each test (before each of them). If there is both an <strong>(:all)</strong> and an <strong>(:each)</strong> block, the <strong>(:all)</strong> block will run first, followed by the <strong>(:each)</strong> block.
+
+<strong>After</strong> functions much the same way, with reverse priority. <strong>After(:each)</strong> will run first, followed by <strong>after(:all). <strong>After</strong> blocks are usually used for manually clearing objects created by the test or in a <strong>before</strong> block.
+
+The final pre-code method is <strong>let</strong>.
+
+{% highlight ruby %}
+describe 'API Interface' do
+    before(:all) do
+        @realtime_url = "http://www.realtime_url.com"
+        @stations_url = "http://www.stations_url.com"
+    end
+    let(:interface) { MtaApiInterface.new(@realtime_url, @stations_url) }
+{% endhighlight %}
+
+<strong>Let</strong> is lazily evaluated, which means the code in the block isn't run until a test calls it. Once it's called within a spec, however, it's cached and doesn't need to be recreated for the next test. <strong>Let</strong> is typically used for expensive methods or object creation, where you don't want to rerun the code many times for each test. You would call a let block using the keyword you used to define it.
+
+{% highlight ruby %}
+interface.load_realtime_data
+{% endhighlight %}
+
+When looking through other RSpec tests, you may see blocks labeled <strong>context</strong>.
+
+{% highlight ruby %}
+describe 'API Interface' do
+    context 'realtime data is available' do
+        it '#load_realtime_data loads successfully' do
+        end
+    end
+    context 'realtime data is not available' do
+        it '#load_realtime_data throws an error' do
+        end
+    end
 end
 {% endhighlight %}
+
+<strong>Context</strong> is an alias for <strong>describe</strong>. The functionality is precisely the same, but context is used in a different... context. Within a describe block, you may have two states that you wish to test your method's behavior under. In the above example, the GTFS realtime data may be unavailable due to server maintenance. In that case, I use a <strong>context</strong> block pair to define the expected behavior of my <strong>#load_realtime_data</strong> method under each condition. 
+
+For detailed examples of these advanced Ruby techniques and proper styling of your spec, check out the <a href="https://github.com/howaboutwe/rspec-style-guide" target="_blank">RSpec Style Guide</a>.
+
+<h2 id="daytwo">Day Two</h2>
+<hr>
+With RSpec, Day Two isn't so bad. 
+
+Sure, you're deeply regretting some of your Day One choices--scrawling useless notes to yourself, neglecting your laundry, writing meandering volumes of unnecessary code. But Day One has its place. It's creative, volatile, and deeply rewarding stuff, perhaps the closest programmers ever get to artistic fervor. 
+
+Day Two is about frameworks, diagrams, low-level tests, and isolating functionality. It's not as glamorous, it's not what you dreamed of when you chose to become a programmer. But Day Two has its rewards, too. The satisfaction of wresting a persistent bug from its hiding place. The deep contentment of scrolling through your refactored code. 
+
+The simple pleasure of a green test at the end of a long day. That's Day Two.
+
+<hr id="links">
+To view my MTA countdown clock (with live updates for the 1/2/3/4/5/6/S subway lines), check out my public <a href="https://github.com/PoloPro/mta-countdown-clock" target="_blank">Github repository</a>.
+
+Also check out <a href="http://rspec.info/" target="_blank">RSpec's documentation and videos</a> for a more detailed walkthrough of their testing framework.
+
+
+
 
 
