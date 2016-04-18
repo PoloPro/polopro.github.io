@@ -15,6 +15,10 @@ title: Tests Are for Day Two
   </ul>
   <li><a href="#tdd">Test-Driven Development</a></li>
   <li><a href="#advanced">Advanced RSpec</a></li>
+  <ul>
+    <li><a href="#before">Before, After, and Let</a></li>
+    <li><a href="#context">Context</a></li>
+  </ul>
   <li><a href="#daytwo">Day Two</a></li>
   <li><a href="#links">Links</a></li>
 </ul>
@@ -242,9 +246,10 @@ Test-driven development is built on iterative design, slowly building towards yo
 <h2 id="advanced">Advanced RSpec</h2>
 <hr>
 
-<h3>Before, After, and Let</h3>
 Even in RSpec, there's always room for the Ruby mantra "don't repeat yourself." With the simple method of writing tests, you'll be repeating environment setup for every test that uses a common object or interface. <strong>Before</strong>, <strong>after</strong>, and <strong>let</strong> are RSpec blocks that help trim that repetitive code.
 
+<h3 id="before">Before, After, and Let</h3>
+<hr>
 <strong>Before</strong> blocks are the most common. Within a describe block, you may have a set of variables or objects that need to be instantiated before every test. 
 
 {% highlight ruby %}
@@ -281,8 +286,8 @@ describe 'API Interface' do
 interface.load_realtime_data
 {% endhighlight %}
 
-<h3>Context</h3>
-
+<h3 id="context">Context</h3>
+<hr>
 When looking through other RSpec tests, you may see blocks labeled <strong>context</strong>.
 
 {% highlight ruby %}
