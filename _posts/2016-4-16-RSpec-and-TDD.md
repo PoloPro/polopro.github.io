@@ -14,6 +14,7 @@ title: Tests Are for Day Two
     <li><a href="#running">Running RSpec</a></li>
   </ul>
   <li><a href="#tdd">Test-Driven Development</a></li>
+  <li><a href="advanced">Advanced RSpec</a></li>
   <li><a href="#daytwo">Day Two</a></li>
   <li><a href="#links">Links</a></li>
 </ul>
@@ -206,7 +207,7 @@ rspec -fd --fail-fast
 We'll now have a single, detailed error to debug, rather than a Terminal screen filled with red.
 
 
-<h3 id="tdd">Test-Driven Development</h3>
+<h2 id="tdd">Test-Driven Development</h3>
 <hr>
 Basic RSpec firmly under your belt, you're well on the way to taming that unruly Day One code. With the ability to write tests you can now begin test-driven development, or TDD, which is the heart of Day Two (and every day after). Compared to the creative rambling of your first day, TDD is a precision instrument. It involves five major steps:
 
@@ -238,7 +239,7 @@ The final step, perhaps the most important one: <strong>repeat the process</stro
 Test-driven development is built on iterative design, slowly building towards your final goal. These five steps aren't necessarily fun, nor are they particularly fast or beautiful. Instead, they require you to keep "what is my project supposed to <em>do</em>?"" in your mind at all times. If a branch of your code doesn't work towards your final product, you'll find yourself asking "why am I writing tests for this?" TDD encourages straightforward, almost single-minded design. It's not a solution for every project or every pitfall, but it does provide a process for developing sturdy, practical code. It's for Day Two.
 
 
-<h3 id="advanced">Advanced RSpec</h3>
+<h2 id="advanced">Advanced RSpec</h3>
 <hr>
 
 <h4>Before, After, and Let</h4>
