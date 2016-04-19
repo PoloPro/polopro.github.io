@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.bordered img {
+img.bordered {
   border: 1px solid;
 }
 
@@ -113,7 +113,6 @@ strong, b {
 
 img {
   max-width: 100%;
-  border: 1px solid;
 }
 
 // Fixes images in popup boxes from Google Translate
