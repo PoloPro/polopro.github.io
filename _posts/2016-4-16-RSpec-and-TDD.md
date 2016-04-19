@@ -9,7 +9,7 @@ title: Tests Are for Day Two
 <hr>
 Every programmer knows the feeling of Day One. You may be waiting in line for coffee, or folding laundry, or meeting a friend for dinner. You're thinking about some project from work, maybe just complaining to yourself about an inconvenience. Suddenly, inspiration. A real eureka moment--a lightning bolt of clarity. 
 
-Immediately you pull out your phone and begin writing furiously. Idea after idea flying onto your default notes app, misspellings left as tomorrow's problem. You need to write this down <em>now</em>. Your coffee, wrinkled laundry, or unfortunate friend is long forgotten. When you finally reach your computer, the rest of the day slides into a blur. One hand is diagramming while the other pours out beautiful, natural code. It's easier than speaking. As you stumble into bed, hours later, you're perfectly content with the world. 
+Immediately you pull out your phone and begin writing furiously. Idea after idea flying onto your default notes app, misspellings left as tomorrow's problem. You need to write this down <em>now</em>. Your coffee, wrinkled laundry, or unfortunate friend is long forgotten. When you finally reach your computer, the rest of the day slides into a blur. One hand is diagramming while the other pours out beautiful, natural code. As you stumble into bed, hours later, you're perfectly content with the world. 
 
 That's Day One. Tests are for Day Two. 
 
@@ -220,7 +220,7 @@ Each step is simple but necessary.
 
 The final step, perhaps the most important one: <strong>repeat the process</strong>! 
 
-Test-driven development is built on iterative design, slowly building towards your final goal. These five steps aren't necessarily fun, nor are they particularly fast or beautiful. Instead, they require you to keep "what is my project supposed to <em>do</em>?"" in your mind at all times. If a branch of your code doesn't work towards your final product, you'll find yourself asking "why am I writing tests for this?" TDD encourages straightforward, almost single-minded design. It's not a solution for every project or every pitfall, but it does provide a process for developing sturdy, practical code. It's for Day Two.
+Test-driven development is built on iterative design, slowly building towards your final goal. These five steps aren't necessarily fun, nor are they particularly fast or beautiful. Instead, they require you to keep "what is my project supposed to <em>do</em>?"" in your mind at all times. If a branch of your code doesn't work towards your final product, you'll find yourself asking "why am I writing tests for this?" TDD encourages straightforward, almost single-minded design. It's not a solution for every project or every pitfall, but it does provide a process for developing sturdy, practical code.
 
 <br>
 <h3 id="advanced">Advanced RSpec</h3>
@@ -294,9 +294,7 @@ With RSpec, Day Two isn't so bad.
 
 Sure, you're deeply regretting some of your Day One choices--scrawling useless notes to yourself, neglecting your laundry, writing meandering volumes of unnecessary code. But Day One has its place. It's creative, volatile, and deeply rewarding stuff, perhaps the closest programmers ever get to artistic fervor. 
 
-Day Two is about frameworks, diagrams, low-level tests, and isolating functionality. It's not as glamorous, it's not what you dreamed of when you chose to become a programmer. But Day Two has its rewards, too. The satisfaction of wresting a persistent bug from its hiding place. The deep contentment of scrolling through your refactored code. 
-
-The simple pleasure of a green test at the end of a long day. That's Day Two.
+Day Two is about frameworks, diagrams, low-level tests, and isolating functionality. It's not as glamorous, it's not what you dreamed of when you chose to become a programmer. But Day Two has its rewards, too. The satisfaction of wresting a persistent bug from its hiding place. The deep contentment of scrolling through your refactored code. That's Day Two.
 
 <br>
 <hr id="links">
