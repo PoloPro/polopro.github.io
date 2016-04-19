@@ -6,7 +6,7 @@ title: Tests Are for Day Two
 <h2>RSpec and Test-Driven Development</h2>
 <hr>
 
-<h2 id="dayone">Day One</h2>
+<h3 id="dayone">Day One</h3>
 <hr>
 Every programmer knows the feeling of Day One. You may be waiting in line for coffee, or folding laundry, or meeting a friend for dinner. You're thinking about some project from work, maybe just complaining to yourself about an inconvenience. Suddenly, inspiration. A real eureka moment--a lightning bolt of clarity. 
 
@@ -18,14 +18,14 @@ You shuffle into work and look at what you wrote the day before. It's sloppy, ra
 
 
 
-<h2 id="rspec">RSpec</h2>
+<h3 id="rspec">RSpec</h3>
 <hr>
 RSpec is, at its core, a testing library for Ruby. It's a Day Two tool. It's doubtless the most popular in use today, providing a rough approximation of natural language for test-writing.
 
 To walk you through RSpec and test-driven development in general, I'll use a project I recently Day One'd: a reimplementation of NYC's subway countdown clocks using the MTA real-time API. 
 
 
-<h3 id="started">Getting Started</h3>
+<h4 id="started">Getting Started</h4>
 <hr>
 To start writing tests for your project, you'll first need to install the RSpec gem in your working directory.
 
@@ -52,9 +52,9 @@ spec/
 
 From here you can start pulling together your Day One work into a coherent project. However, that requires some basic knowledge of how to organize your RSpec.
 
-<h3 id="layout">The Basic Layout of RSpec</h3>
+<h4 id="layout">The Basic Layout of RSpec</h4>
 <hr>
-<h4>Describe</h4>
+<h5>Describe</h5>
 An RSpec spec (aha) can basically be broken down into a series of <strong>describe</strong> blocks. These blocks model the structure of your program, usually matching your classes and methods. From my <em>mta_api_spec</em>:
 
 {% highlight ruby %}
@@ -90,7 +90,7 @@ Note the naming convention: instead of <strong>'the schedule is created properly
 Also important to note is the prefix. A <strong>period</strong> indicates the method is a <strong>class method</strong>, while a <strong>pound sign (#)</strong> indicates the method is an <strong>instance method</strong>.
 
 
-<h4>Writing the Tests</h4>
+<h5>Writing the Tests</h5>
 
 Describe blocks organize and provide context for your tests, but they don't test any functionality themselves. For that you need to use <strong>it</strong> blocks.
 
@@ -146,7 +146,7 @@ expect{ apples_and_oranges }.to change(basket.count).by(1)
 This is because <strong>expect</strong> has the method <strong>.to</strong>, not the block or value itself. Don't let the natural language feel of RSpec trick you into putting a space after expect!
 
 
-<h3 id="running">Running RSpec</h3>
+<h4 id="running">Running RSpec</h4>
 <hr>
 Now that you have some tests, it's time to run them. Thankfully, running RSpec tests involves just a single command.
 
@@ -193,7 +193,7 @@ rspec -fd --fail-fast
 We'll now have a single, detailed error to debug, rather than a Terminal screen filled with red.
 
 
-<h2 id="tdd">Test-Driven Development</h2>
+<h3 id="tdd">Test-Driven Development</h3>
 <hr>
 Basic RSpec firmly under your belt, you're well on the way to taming that unruly Day One code. With the ability to write tests you can now begin test-driven development, or TDD, which is the heart of Day Two (and every day after). Compared to the creative rambling of your first day, TDD is a precision instrument. It involves five major steps:
 
@@ -225,12 +225,12 @@ The final step, perhaps the most important one: <strong>repeat the process</stro
 Test-driven development is built on iterative design, slowly building towards your final goal. These five steps aren't necessarily fun, nor are they particularly fast or beautiful. Instead, they require you to keep "what is my project supposed to <em>do</em>?"" in your mind at all times. If a branch of your code doesn't work towards your final product, you'll find yourself asking "why am I writing tests for this?" TDD encourages straightforward, almost single-minded design. It's not a solution for every project or every pitfall, but it does provide a process for developing sturdy, practical code. It's for Day Two.
 
 
-<h2 id="advanced">Advanced RSpec</h2>
+<h3 id="advanced">Advanced RSpec</h3>
 <hr>
 
 Even in RSpec, there's always room for the Ruby mantra "don't repeat yourself." With the simple method of writing tests, you'll be repeating environment setup for every test that uses a common object or interface. <strong>Before</strong>, <strong>after</strong>, and <strong>let</strong> are RSpec blocks that help trim that repetitive code.
 
-<h3 id="before">Before, After, and Let</h3>
+<h4 id="before">Before, After, and Let</h4>
 <hr>
 <strong>Before</strong> blocks are the most common. Within a describe block, you may have a set of variables or objects that need to be instantiated before every test. 
 
@@ -268,7 +268,7 @@ describe 'API Interface' do
 interface.load_realtime_data
 {% endhighlight %}
 
-<h3 id="context">Context</h3>
+<h4 id="context">Context</h4>
 <hr>
 When looking through other RSpec tests, you may see blocks labeled <strong>context</strong>.
 
@@ -290,7 +290,7 @@ end
 For detailed examples of these advanced Ruby techniques and proper styling of your spec, check out the <a href="https://github.com/howaboutwe/rspec-style-guide" target="_blank">RSpec Style Guide</a>.
 
 
-<h2 id="daytwo">Day Two</h2>
+<h3 id="daytwo">Day Two</h3>
 <hr>
 With RSpec, Day Two isn't so bad. 
 
