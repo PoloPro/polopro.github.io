@@ -107,7 +107,8 @@ strong, b {
   font-weight: bold;
 }
 
-a.site-avatar img {
+header.masthead.clearfix a.site-avatar img {
+  border: 0px;
   max-width: 100%;
 }
 
