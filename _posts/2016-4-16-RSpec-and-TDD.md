@@ -294,7 +294,9 @@ With RSpec, Day Two isn't so bad.
 
 Sure, you're deeply regretting some of your Day One choices--scrawling useless notes to yourself, neglecting your laundry, writing meandering volumes of unnecessary code. But Day One has its place. It's creative, volatile, and deeply rewarding stuff, perhaps the closest programmers ever get to artistic fervor. 
 
-Day Two is about frameworks, diagrams, low-level tests, and isolating functionality. It's not as glamorous, it's not what you dreamed of when you chose to become a programmer. But Day Two has its rewards, too. The satisfaction of wresting a persistent bug from its hiding place. The deep contentment of scrolling through your refactored code. That's Day Two.
+Day Two is about frameworks, diagrams, low-level tests, and isolating functionality. It's not as glamorous, it's not what you dreamed of when you chose to become a programmer. But Day Two has its rewards, too. The satisfaction of wresting a persistent bug from its hiding place. The deep contentment of scrolling through your refactored code. 
+
+That's Day Two.
 
 <br>
 <hr id="links">
