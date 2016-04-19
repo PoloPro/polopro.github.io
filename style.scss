@@ -30,6 +30,10 @@ body {
   width: 100%;
 }
 
+.bordered img {
+  border: 1px solid;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
   color: $darkBlue;
@@ -107,7 +111,6 @@ strong, b {
   font-weight: bold;
 }
 
-
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
@@ -173,7 +176,7 @@ strong, b {
     margin: 0 auto;
   }
 
-  p img {
+  img {
     border-radius: 5px;
   }
 }
