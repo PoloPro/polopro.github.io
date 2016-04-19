@@ -30,10 +30,6 @@ body {
   width: 100%;
 }
 
-.bordered img {
-  border: 1px solid;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
   color: $darkBlue;
@@ -46,6 +42,10 @@ h1, h2, h3, h4, h5, h6 {
   @include mobile {
     line-height: 1.4;
   }
+}
+
+.bordered img {
+  border: 1px solid;
 }
 
 h1 {
@@ -109,6 +109,11 @@ em, i {
 
 strong, b {
   font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  border: 1px solid;
 }
 
 // Fixes images in popup boxes from Google Translate
