@@ -107,10 +107,6 @@ strong, b {
   font-weight: bold;
 }
 
-header.masthead.clearfix a.site-avatar img {
-  border: 0px;
-  max-width: 100%;
-}
 
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
@@ -177,7 +173,7 @@ header.masthead.clearfix a.site-avatar img {
     margin: 0 auto;
   }
 
-  img {
+  p img {
     border-radius: 5px;
   }
 }
