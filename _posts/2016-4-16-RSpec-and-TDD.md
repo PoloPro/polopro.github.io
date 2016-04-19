@@ -3,8 +3,7 @@ layout: post
 title: Tests Are for Day Two
 ---
 <h2>RSpec and Test-Driven Development</h2>
-
-
+<br>
 <h3 id="dayone">Day One</h3>
 <hr>
 Every programmer knows the feeling of Day One. You may be waiting in line for coffee, or folding laundry, or meeting a friend for dinner. You're thinking about some project from work, maybe just complaining to yourself about an inconvenience. Suddenly, inspiration. A real eureka moment--a lightning bolt of clarity. 
@@ -15,8 +14,7 @@ That's Day One. Tests are for Day Two.
 
 You shuffle into work and look at what you wrote the day before. It's sloppy, rambling stuff that ends in the middle of a line. Your diagrams are unreadable scribbles, your notes autocorrected to gibberish. Picking up the pieces of your frenzied coding and laying out a plan forward--that's Day Two.
 
-
-
+<br>
 <h3 id="rspec">RSpec</h3>
 <hr>
 RSpec is, at its core, a testing library for Ruby. It's a Day Two tool. It's doubtless the most popular in use today, providing a rough approximation of natural language for test-writing.
@@ -191,7 +189,7 @@ rspec -fd --fail-fast
 
 We'll now have a single, detailed error to debug, rather than a Terminal screen filled with red.
 
-
+<br>
 <h3 id="tdd">Test-Driven Development</h3>
 <hr>
 Basic RSpec firmly under your belt, you're well on the way to taming that unruly Day One code. With the ability to write tests you can now begin test-driven development, or TDD, which is the heart of Day Two (and every day after). Compared to the creative rambling of your first day, TDD is a precision instrument. It involves five major steps:
@@ -223,7 +221,7 @@ The final step, perhaps the most important one: <strong>repeat the process</stro
 
 Test-driven development is built on iterative design, slowly building towards your final goal. These five steps aren't necessarily fun, nor are they particularly fast or beautiful. Instead, they require you to keep "what is my project supposed to <em>do</em>?"" in your mind at all times. If a branch of your code doesn't work towards your final product, you'll find yourself asking "why am I writing tests for this?" TDD encourages straightforward, almost single-minded design. It's not a solution for every project or every pitfall, but it does provide a process for developing sturdy, practical code. It's for Day Two.
 
-
+<br>
 <h3 id="advanced">Advanced RSpec</h3>
 <hr>
 
@@ -288,7 +286,7 @@ end
 
 For detailed examples of these advanced Ruby techniques and proper styling of your spec, check out the <a href="https://github.com/howaboutwe/rspec-style-guide" target="_blank">RSpec Style Guide</a>.
 
-
+<br>
 <h3 id="daytwo">Day Two</h3>
 <hr>
 With RSpec, Day Two isn't so bad. 
@@ -299,6 +297,7 @@ Day Two is about frameworks, diagrams, low-level tests, and isolating functional
 
 The simple pleasure of a green test at the end of a long day. That's Day Two.
 
+<br>
 <hr id="links">
 To view my MTA countdown clock (with live updates for the 1/2/3/4/5/6/S subway lines), check out my public <a href="https://github.com/PoloPro/mta-countdown-clock" target="_blank">Github repository</a>.
 
