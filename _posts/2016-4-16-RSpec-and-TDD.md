@@ -5,24 +5,6 @@ title: Tests Are for Day Two
 
 <h2>RSpec and Test-Driven Development</h2>
 <hr>
-<ul>
-  <li><a href="#dayone">Day One</a></li>
-  <li><a href="#rspec">RSpec</a></li>
-  <ul>
-    <li><a href="#started">Getting Started</a></li>
-    <li><a href="#layout">The Basic Layout of RSpec</a></li>
-    <li><a href="#running">Running RSpec</a></li>
-  </ul>
-  <li><a href="#tdd">Test-Driven Development</a></li>
-  <li><a href="#advanced">Advanced RSpec</a></li>
-  <ul>
-    <li><a href="#before">Before, After, and Let</a></li>
-    <li><a href="#context">Context</a></li>
-  </ul>
-  <li><a href="#daytwo">Day Two</a></li>
-  <li><a href="#links">Links</a></li>
-</ul>
-
 
 <h2 id="dayone">Day One</h2>
 <hr>
