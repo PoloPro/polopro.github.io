@@ -22,7 +22,7 @@ RSpec is, at its core, a testing library for Ruby. It's a Day Two tool. It's dou
 
 To walk you through RSpec and test-driven development in general, I'll use a project I recently Day One'd: a reimplementation of NYC's subway countdown clocks using the MTA real-time API. 
 
-
+<br>
 <h4 id="started">Getting Started</h4>
 <hr>
 To start writing tests for your project, you'll first need to install the RSpec gem in your working directory.
@@ -50,6 +50,7 @@ spec/
 
 From here you can start pulling together your Day One work into a coherent project. However, that requires some basic knowledge of how to organize your RSpec.
 
+<br>
 <h4 id="layout">The Basic Layout of RSpec</h4>
 <hr>
 <h5>Describe</h5>
@@ -87,7 +88,7 @@ Note the naming convention: instead of <strong>'the schedule is created properly
 
 Also important to note is the prefix. A <strong>period</strong> indicates the method is a <strong>class method</strong>, while a <strong>pound sign (#)</strong> indicates the method is an <strong>instance method</strong>.
 
-
+<br>
 <h5>Writing the Tests</h5>
 
 Describe blocks organize and provide context for your tests, but they don't test any functionality themselves. For that you need to use <strong>it</strong> blocks.
@@ -143,7 +144,7 @@ expect{ apples_and_oranges }.to change(basket.count).by(1)
 
 This is because <strong>expect</strong> has the method <strong>.to</strong>, not the block or value itself. Don't let the natural language feel of RSpec trick you into putting a space after expect!
 
-
+<br>
 <h4 id="running">Running RSpec</h4>
 <hr>
 Now that you have some tests, it's time to run them. Thankfully, running RSpec tests involves just a single command.
@@ -266,6 +267,7 @@ describe 'API Interface' do
 interface.load_realtime_data
 {% endhighlight %}
 
+<br>
 <h4 id="context">Context</h4>
 <hr>
 When looking through other RSpec tests, you may see blocks labeled <strong>context</strong>.
