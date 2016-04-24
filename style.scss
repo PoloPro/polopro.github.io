@@ -19,7 +19,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+  font: 16px/1.4 $helvetica;
   color: $darkGray;
 }
 
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
   color: $darkBlue;
   font-weight: bold;
 
-  line-height: 1.7;
+  line-height: 1.6;
   padding: 0;
 
   @include mobile {
@@ -48,23 +48,23 @@ img.bordered {
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 32px;
   a {
-    color: inherit;
+    color: $darkBlue;
   }
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 28px;
   color: $gray;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 h4 {
-  font-size: 22px;
+  font-size: 20px;
   color: $gray;
 }
 

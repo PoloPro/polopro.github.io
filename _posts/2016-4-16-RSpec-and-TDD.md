@@ -272,18 +272,16 @@ RSpec now firmly under your belt, you're well on the way to taming that unruly D
 
 Each step is simple but necessary.
 
-<ol>
-<li><strong>Write a small test</strong></li>
+<h5>Write a small test</h5>
   Write a test that covers just a single method or a dozen lines of code. You'll be repeating this list many times, and you want to slowly build functionality rather than rush headlong.
-<li><strong>Run the test and fail it</strong></li>
+<h5>Run the test and fail it</h5>
   This is an important step! Your test shouldn't pass before you've coded a solution to it. If it does, your test is independent of your code, which is useless. If you're writing tests for legacy code (even if it's your own from the day before), continue adding tests, one small group at a time, until you reach the 'failing' edge of your code. This breadcrumb trail of tests will provide valuable information if later features are difficult to debug.
-<li><strong>Code!</strong></li>
+<h5>Code!</h5>
   Code a solution to the small test you've written. Don't worry about elegance or run-time yet, just write the most direct code to get that test green.
-<li><strong>Run the test and pass it</strong></li>
+<h5>Run the test and pass it</h5>
   Everyone's favorite part! Run your test and pass it. Bask in the warmth of RSpec's beautiful green 'passing' tests. If you're failing at this step, go back to your code and fix it until your test passes!
-<li><strong>Make your code pretty</strong></li>
+<h5>Make your code pretty</h5>
   Now, with the test passing, go back to your solution. Is it well-structured? Is it efficient and cleanly formatted? Does it duplicate any previous functionality? Can it be abstracted? Refactor it until you're proud of it.
-</ol>
 
 The final step, perhaps the most important one: <strong>repeat the process</strong>! 
 
