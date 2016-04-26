@@ -22,7 +22,6 @@ RSpec is, at its core, a testing library for Ruby. It's a Day Two tool. It's dou
 
 To walk you through RSpec and test-driven development in general, I'll use a project I recently Day One'd: a reimplementation of NYC's subway countdown clocks using the MTA real-time API. 
 
-<br>
 <h4 id="started">Getting Started</h4>
 <hr>
 To start writing tests for your project, you'll first need to install the RSpec gem in your working directory.
