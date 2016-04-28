@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Tests Are for Day Two
+title: RSpec and Test-Driven Development
 ---
-<h2>RSpec and Test-Driven Development</h2>
+<h2>Tests Are for Day Two</h2>
 
 <br>
 <h3 id="dayone">Day One</h3>
